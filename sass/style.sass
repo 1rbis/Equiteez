@@ -11,6 +11,8 @@ p
     margin: 0
 .footer_mobile
     display: none
+.header_hamburger
+    display: none
 header
     .container
         height: 105px
@@ -18,7 +20,10 @@ header
         justify-content: space-between
         align-items: center
 .header
-
+    &_menu
+        width: 78%
+        display: flex
+        justify-content: space-between
     &_list
         width: 730px
         ul
@@ -35,6 +40,24 @@ header
                     font-size: 18px
                     color: #000000
     &_social
+        display: flex
+        a
+            margin-right: 7px
+            &:last-child
+                margin-right: 0
+        div
+            width: 30px
+            height: 31px
+
+        .twitter_icon
+            background: url(../images/social/twitter.svg) center center no-repeat
+        .facebook_icon
+            background: url(../images/social/facebook.svg) center center no-repeat
+        .linkedin_icon
+            background: url(../images/social/linkedin.svg) center center no-repeat
+        .medium_icon
+            background: url(../images/social/medium.svg) center center no-repeat
+
         img
             margin-right: 7px
             &:last-child
@@ -85,11 +108,12 @@ header
             background: none
 
 .title
-    font-weight: 600
-    font-size: 45px
-    text-align: center
-    text-transform: capitalize
-    color: #000000
+    h2
+        font-weight: 600
+        font-size: 45px
+        text-align: center
+        text-transform: capitalize
+        color: #000000
 .securities
     padding: 30px 0 49px
     &_subtitle
@@ -172,7 +196,8 @@ header
 .products
     padding: 43px 0 27px
     .title
-        margin-bottom: 8px
+        h2
+            margin-bottom: 8px
     &_subtitle
         font-weight: 600
         font-size: 32px
@@ -197,10 +222,11 @@ header
 
 .digit
     padding: 62px 0 97px
-    background: url("../img/digit.jpg") center center no-repeat
+    background: url("../images/digit/digit.jpg") center center no-repeat
     background-size: 1920px 100%
     .title
-        margin-bottom: 33px
+        h2
+            margin-bottom: 33px
     &_block
         display: flex
         flex-direction: column
@@ -232,7 +258,8 @@ header
 .blog
     padding-bottom: 34px
     .title
-        margin-bottom: 23px
+        h2
+            margin-bottom: 23px
     &_block
         img
             margin-bottom: 15px
@@ -279,17 +306,20 @@ header
         justify-content: flex-start
         margin-top: 32px
     &_title
-        font-weight: 600
-        font-size: 45px
-        line-height: 61px
-        color: #000000
-        margin-bottom: 11px
+        h2
+            font-weight: 600
+            font-size: 45px
+            line-height: 61px
+            color: #000000
+            margin-bottom: 11px
     &_descr
         font-weight: 400
         font-size: 20px
         line-height: 27px
         color: #000000
-        span
+
+        a
+            text-decoration: none
             color: $main-color
             font-weight: 700
             font-size: 20px
@@ -349,13 +379,14 @@ footer
         margin: 19px 0 23px
 .footer
     &_contact
+
         font-weight: 600
         font-size: 18px
         line-height: 25px
         color: #FFFFFF
         margin-bottom: 39px
     &_logo
-        background: url(../img/logo.svg)  no-repeat
+        background: url(../images/logo.svg)  no-repeat
         background-size: 100% 100%
         width: 163px
         height: 58px
@@ -378,6 +409,113 @@ footer
         justify-content: center
         margin-top: 57px
 
+.modal 
+    position: fixed
+    top: 0
+    left: 0
+    z-index: 1050
+    display: none
+    justify-content: center
+    align-items: center
+    width: 100%
+    height: 100%
+    overflow: hidden
+    background-color: rgba(0, 0, 0, .5)
+    &_dialog 
+        width: 580px
+        height: 502px
+        background: #FFFFFF
+        border-radius: 10px
+        padding: 26px 20px 17px 21px
+        display: flex
+
+    &_content 
+        position: relative
+        width: 100%
+        background-color: #fff
+        overflow-y: auto
+        &_title
+            font-weight: 600
+            font-size: 20px
+            line-height: 27px
+            text-align: center
+            color: #010101
+            margin-bottom: 58px
+        &_line
+            display: flex
+            justify-content: space-between
+            align-items: center
+            margin-bottom: 15px
+            p
+                font-weight: 400
+                font-size: 20px
+                line-height: 27px
+                color: #000000
+                margin: 0
+            input
+                border: 1px solid #969696
+                border-radius: 5px
+                width: 380px
+                height: 36px
+                background: transparent
+            textarea
+                width: 380px
+                height: 132px
+                border: 1px solid #969696
+                border-radius: 5px
+                background: transparent
+        &_btn
+            width: 160px
+            height: 43px
+            background: #252525
+            border-radius: 10px
+            border: none
+            font-weight: 600;
+            font-size: 20px
+            line-height: 27px
+            color: #FFFFFF
+            float: right
+            margin-top: 20px
+            transition: 0.5s color, background
+            &:hover
+                color: #252525
+                background-color: #FFFFFF
+                border: 3px solid #000000
+.success
+    position: fixed
+    top: 0
+    left: 0
+    z-index: 1050
+    display: none
+    justify-content: center
+    align-items: center
+    width: 100%
+    height: 100%
+    overflow: hidden
+    background-color: rgba(0, 0, 0, .5)
+    &_dialog 
+        width: 580px
+        height: 216px
+        background: #FFFFFF
+        border-radius: 10px
+        display: flex
+        align-items: center
+        justify-content: center
+    &_content
+        font-weight: 600
+        font-size: 20px
+        line-height: 27px
+        color: #010101
+
+
+.show
+    display: flex
+
+
+    
+    
+
+
         
 
 
@@ -387,6 +525,8 @@ footer
             img
                 width: 154px
                 height: 44px
+        &_menu
+            width: 82%
     .securities_form
         &_input
             width: 370px
@@ -404,28 +544,79 @@ footer
     .contact_line
         input
             width: 458px
+    header
+        .container
+            justify-content: center
+            position: relative
     .header
-        &_list
-            ul
+            
+        &_hamburger
+            display: block
+            position: absolute
+            top: 50%
+            left: 0
+            transform: translateY(-50%)
+
+            width: 23px
+            height: 15px
+            span
                 display: block
-                list-style: none
-                margin: 0
-                padding: 0
-                li
-                    a
-                        text-decoration: none
-                        font-weight: 600
-                        font-size: 18px
-                        color: #000000
-        &_social
-            img
-                margin-right: 7px
+                height: 3px
+                background-color: $main-color
+                margin-bottom: 3px
+                transition: 0.5s transform, display
                 &:last-child
-                    margin-right: 0
+                    margin-bottom: 0
+            &_active
+                
+                span
+                    margin-bottom: -3px
+                    &:nth-child(1)
+                        transform: translateY(5px) rotate(45deg)
+                    &:nth-child(2)
+                        display: none
+                    &:nth-child(3)
+                        transform: translateY(5px) rotate(-45deg)
+                    
+                        
+        &_menu
+            padding: 32px 0 22px 20px
+            position: absolute
+            top: -345px
+            left: 0
+            width: 100%
+            height: 345px
+            background: $main-color
+            flex-direction: column
+            transition: 0.5s top
+            z-index: 1
+            &_active
+                top: 105px
+        &_list
+            width: 100%
+            ul
+                flex-direction: column
+                align-items: flex-start
+                li
+                    margin-bottom: 13px
+        &_social
+            .twitter_icon
+                background: url(../images/social/twitter_mobile.svg) center center no-repeat
+            .facebook_icon
+                background: url(../images/social/facebook_mobile.svg) center center no-repeat
+            .linkedin_icon
+                background: url(../images/social/linkedin_mobile.svg) center center no-repeat
+            .medium_icon
+                background: url(../images/social/medium_mobile.svg) center center no-repeat
+
+
+
+        
 
 @media (max-width: 1000px)
     .title
-        font-size: 35px
+        h2
+            font-size: 35px
     .equity
         padding: 15px 0 25px
         .container
@@ -478,7 +669,8 @@ footer
             line-height: 27px
     .products
         .title
-            margin-bottom: 40px
+            h2
+                margin-bottom: 40px
         &_subtitle
             font-size: 25px
             line-height: 34px
@@ -509,15 +701,16 @@ footer
     .contact
         padding: 28px 0 55px
         &_title
-            font-size: 35px
-            line-height: 48px
+            h2
+                font-size: 35px
+                line-height: 48px
         &_text
             margin-top: 0
         &_descr
             font-size: 18px
             line-height: 25px
             margin-bottom: 23px
-            span
+            a
                 font-size: 18px
                 line-height: 25px
         &_line
@@ -534,8 +727,11 @@ footer
         &_line
             display: block
 @media (max-width: 576px)
+    header
+        padding: 0 20px
     .title
-        line-height: 32px
+        h2
+            line-height: 32px
     .container
         padding: 0 20px 0 20px
     .col-12
@@ -581,7 +777,8 @@ footer
             width: 100%
     .digit
         .title
-            line-height: 46px
+            h2
+                line-height: 46px
         &_block
             padding: 7px 0
     .blog
