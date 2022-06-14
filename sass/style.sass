@@ -422,7 +422,8 @@ footer
     overflow: hidden
     background-color: rgba(0, 0, 0, .5)
     &_dialog 
-        width: 580px
+        width: 100%
+        max-width: 580px
         height: 502px
         background: #FFFFFF
         border-radius: 10px
@@ -493,11 +494,13 @@ footer
     height: 100%
     overflow: hidden
     background-color: rgba(0, 0, 0, .5)
-    &_dialog 
-        width: 580px
+    &_dialog
+        width: 100% 
+        max-width: 580px
         height: 216px
         background: #FFFFFF
         border-radius: 10px
+        padding: 20px 20px 20px 20px
         display: flex
         align-items: center
         justify-content: center
@@ -726,6 +729,7 @@ footer
     .contact
         &_line
             display: block
+
 @media (max-width: 576px)
     header
         padding: 0 20px
@@ -815,6 +819,22 @@ footer
             margin-bottom: 22px
         &_copyright
             margin: 0
+
+    .modal
+        &_dialog
+            padding-top: 20px
+        &_content
+            &_title
+                margin-bottom: 20px
+            &_line 
+                display: block
+                input
+                    width: 100%
+                textarea
+                    width: 100%
+                    height: 90px
+            &_btn
+                margin-top: 0
         
 
 
